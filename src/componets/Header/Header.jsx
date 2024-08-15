@@ -2,6 +2,7 @@
 import Link from "next/link"
 import styles from './Header.module.css'
 import { useState } from 'react'
+import Menu from "../Menu/menu.jsx"
 
 
 const Header = () => {
@@ -14,18 +15,12 @@ function handleClick() {
 }
   return (
     <header className={styles.headerContainer}>
-      <h1 className={styles.title}>🔥 Fireplace Palace</h1>
-      <img className={styles.img} src="/menu-open-button.png" onClick={() => handleClick()} />
+        <h1 className={styles.title} >🔥 Fireplace Palace</h1>
+        <img className={styles.img} src="/menu-open-button.png" onClick={() => handleClick()} />
       { 
       isMenuOpen && (
           <>
-            <div className={styles.menu}>
-              <img className={styles.closeButton} src="/menu-close-button.png" onClick={() => handleClick()} />
-              <div className={styles.links}>
-                <Link href="/">Home</Link>
-                <Link href="/founders">Meet the Founders</Link>
-              </div>
-            </div>
+            <Menu />
           </>
         )
       }

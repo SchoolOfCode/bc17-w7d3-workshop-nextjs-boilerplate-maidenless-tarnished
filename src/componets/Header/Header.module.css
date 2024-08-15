@@ -17,22 +17,28 @@
   }
 
   .menu {
-    height: 1000px;
+    height: 30%;
     width: 100%;
-    background-color: orange;
+    background-color: #f1911b;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
   }
 
   .img {
     height: 50px;
     width: 50px;
+    cursor: pointer;
   }
 
   .closeButton {
     height: 40px;
     width: 40;
+    cursor: pointer;
   }
 
   .links {
@@ -40,7 +46,7 @@
     height: 5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-end;
     font-size: 1.5rem;
   }
