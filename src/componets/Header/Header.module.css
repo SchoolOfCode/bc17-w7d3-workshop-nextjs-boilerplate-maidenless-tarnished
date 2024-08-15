@@ -1,6 +1,9 @@
 .headerContainer {
     padding-left: 10px;
     font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .title{
@@ -10,4 +13,15 @@
     .headerContainer {
       width: 70%;
     }
+  }
+
+  .menu {
+    height: 1000px;
+    width: 100%;
+    background-color: orange;
+  }
+
+  .img {
+    height: 50px;
+    width: 50px;
   }
