@@ -4,7 +4,7 @@ import styles from './Header.module.css'
 import { useState } from 'react'
 
 
-const Header = (props) => {
+const Header = () => {
   
 const[isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -14,17 +14,17 @@ function handleClick() {
 }
   return (
     <header className={styles.headerContainer}>
-      <h1 className={styles.title}>{props.title} Limgrave Palace</h1>
+      <h1 className={styles.title}>🔥 Fireplace Palace</h1>
       <img className={styles.img} src="/menu-open-button.png" onClick={() => handleClick()} />
       { 
       isMenuOpen && (
           <>
             <div className={styles.menu}>
-              <img src="/menu-close-button.png" />
-                <div className={styles.link}>
-              <Link href="/app">Home</Link>
-              <Link href="/founders">Founders</Link>
-                </div>
+              <img className={styles.closeButton} src="/menu-close-button.png" onClick={() => handleClick()} />
+              <div className={styles.links}>
+                <Link href="/">Home</Link>
+                <Link href="/founders">Meet the Founders</Link>
+              </div>
             </div>
           </>
         )
