@@ -18,7 +18,9 @@ function handleClick() {
       {
         isMenuOpen && (
           <>
-            <p>Wassup!</p>
+          
+
+            <button onClick={handleClick}>See the partners</button>
           </>
         )
       }
