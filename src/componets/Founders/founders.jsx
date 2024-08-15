@@ -5,7 +5,7 @@ import HowItWorksSection from "../HowItWorks/HowItWorksSection/HowItWorksSection
 const Founders = () => {
     return (
         <main>
-            <HeroSection />
+            <HeroSection heroImagesrc="/founder-mike-and-mandy.png" />
             <Separator />
             <HowItWorksSection />
         </main>

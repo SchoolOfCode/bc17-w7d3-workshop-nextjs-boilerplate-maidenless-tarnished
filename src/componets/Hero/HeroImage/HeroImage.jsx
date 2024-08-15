@@ -1,10 +1,10 @@
 
 import styles from './HeroImage.module.css'
-const HeroImage = () => {
+const HeroImage = ({ src, alt }) => {
     return (
         <img
-        src="/hero-desktop.png"
-        alt="Cozy living room with a fireplace"
+        src={src}
+        alt={alt}
         className={styles.heroImage}
       />
     )

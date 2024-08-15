@@ -5,7 +5,7 @@ import HowItWorksSection from "../HowItWorks/HowItWorksSection/HowItWorksSection
 const Main = () => {
   return (
     <main>
-      <HeroSection />
+      <HeroSection heroImagesrc="/hero-desktop.png" />
       <Separator />
       <HowItWorksSection />
     </main>
