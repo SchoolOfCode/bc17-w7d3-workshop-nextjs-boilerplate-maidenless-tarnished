@@ -2,23 +2,23 @@ import Link from "next/link"
 import { useState } from "react"
 import styles from "./menu.module.css"
 
-export default function Menu() {
+export default function Menu({ isOpen, onClose }) {
 
-    const[closeMenu, setCloseMenu] = useState(false)
     function handleClick() {
-        setCloseMenu(!closeMenu)
+        onClose();
+        console.log("Menu closed");
     }
-
     return (
         <>
-            <div className={styles.menuBox}>
-                <img className={styles.closeButton} src="/menu-close-button.png" />
+            <div className={`${styles.menuBox} ${!isOpen ? styles.hide : ''}`}>
+                <img className={styles.closeButton} src="/menu-close-button.png" onClick={() => handleClick()} />
                 <div className={styles.links}>
                     <Link onClick={() => handleClick()} href="/" >Home</Link>
                     <Link onClick={() => handleClick()} href="/founders">Meet the Founders</Link>
                 </div>
             </div>
         </>
+
     )
 }
 

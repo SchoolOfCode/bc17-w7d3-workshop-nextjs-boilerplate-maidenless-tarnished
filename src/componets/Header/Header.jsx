@@ -1,5 +1,4 @@
 "use client"
-import Link from "next/link"
 import styles from './Header.module.css'
 import { useState } from 'react'
 import Menu from "../Menu/menu.jsx"
@@ -20,7 +19,7 @@ function handleClick() {
       { 
       isMenuOpen && (
           <>
-            <Menu />
+            <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
           </>
         )
       }

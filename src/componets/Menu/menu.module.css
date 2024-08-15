@@ -1,13 +1,13 @@
 .menuBox {
     background-color: #f1911b;
-    width: 100%;
+    width: 95%;
     position: fixed;   
     top: 0;
-    left: 0;
-    margin: 0 auto;
+    left: 2.5%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    
 }
 
 .closeButton {
@@ -31,4 +31,8 @@
 .links a {
     text-decoration: none;
     color: #fff2e4;
+}
+
+.hide {
+    display: none;
 }
