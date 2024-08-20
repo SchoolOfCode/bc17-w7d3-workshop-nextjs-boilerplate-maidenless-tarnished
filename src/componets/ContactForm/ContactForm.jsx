@@ -4,32 +4,59 @@ import styles from "./ContactForm.module.css"
 
 export default function ContactForm (){
 
-    const [fullname, setFullName] = useState("");
+    const [fullName, setFullName] = useState("");
     const [postcode, setPostcode] = useState("");
+    const [houseName, setHouseName] = useState("");
+    const [cityName, setCityName] = useState("");
 
     function handleChange(event) {
 
         if (event.target.name === "fullName") {
             setFullName(event.target.value)
         };
-        if (event.target.name === "postcode")
+        if (event.target.name === "postcode") {
             setPostcode(event.target.value)
+        };
+        if (event.target.name === "houseName") {
+            setHouseName(event.target.value)
+        };
+        if (event.target.name === "cityName") {
+            setCityName(event.target.value)
+        };
     }
 
-    console.log(fullname)
+    console.log(fullName, postcode, houseName, cityName)
 
+    function handleSubmit(event) { // add this to prevent the form from submitting by default as it usually would.
+        event.preventDefault();
+        // Now we can do whatever we want with the form data!
+        console.log(event)
+        
+        const fullName = event.target.fullName.value;
+        const postcode = event.target.postcode.value;
+        const houseName = event.target.houseName.value;
+        const cityName = event.target.cityName.value;
+    
+        if (!fullName || !postcode || !cityName || !houseName) {
+             alert("Error - some fields are missing");
+            return;
+        }
+        console.log(fullName, postcode, houseName, cityName)
+    }
+      
+// added onsubmit handler to the form - allows us to control what happens when the form is submitted
     return (
         <>
             <h1>Design Booking</h1>
-            <form>
-                <fieldset>
+            <form onSubmit={handleSubmit}> 
+                <fieldset> 
                     <legend>Personal Information</legend>
                     <label htmlFor="fullName">Full Name
                         <input  type="text" 
                                 name="fullName" 
                                 id="fullName" 
                                 onChange={handleChange} 
-                                value={fullname}/>
+                                value={fullName}/>
                     </label>
 <div>
                     <label htmlFor="postcode">Postcode
@@ -41,20 +68,20 @@ export default function ContactForm (){
                              
                     </label>
                     </div>
-                    <label>House/ Flat Number and Street Name
+                    <label htmlFor="houseName">House/ Flat Number and Street Name
                         <input  type="text"
-                                name="fullName" 
-                                id="fullName" 
+                                name="houseName" 
+                                id="houseName" 
                                 onChange={handleChange} 
-                                value={fullname}/>
+                                value={houseName}/>
                     </label>
 
-                    <label>
+                    <label htmlFor="cityName">City
                         <input  type="text"
-                                name="fullName" 
-                                id="fullName" 
+                                name="cityName" 
+                                id="cityName" 
                                 onChange={handleChange} 
-                                value={fullname}/>
+                                value={cityName}/>
                     </label>
                 </fieldset>
 
@@ -63,6 +90,7 @@ export default function ContactForm (){
                     <label><input /></label>
                     <label><input /></label>
                 </fieldset>
+                <button type="submit">Submit Form</button>
             </form>
         </>
     );
