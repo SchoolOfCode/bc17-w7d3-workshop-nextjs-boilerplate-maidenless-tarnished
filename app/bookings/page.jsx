@@ -1,4 +1,4 @@
-import ContactForm from "src\componets\ContactForm\ContactForm.jsx"
+import ContactForm from "../../src/componets/ContactForm/ContactForm"
 
 export default function bookings() {
     return (

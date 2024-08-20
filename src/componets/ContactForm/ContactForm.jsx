@@ -1,6 +1,23 @@
-import styles from "src\componets\ContactForm\ContactForm.module.css"
+"use client"
+import { useState } from "react";
+import styles from "./ContactForm.module.css"
 
 export default function ContactForm (){
+
+    const [fullname, setFullName] = useState("");
+    const [postcode, setPostcode] = useState("");
+
+    function handleChange(event) {
+
+        if (event.target.name === "fullName") {
+            setFullName(event.target.value)
+        };
+        if (event.target.name === "postcode")
+            setPostcode(event.target.value)
+    }
+
+    console.log(fullname)
+
     return (
         <>
             <h1>Design Booking</h1>
@@ -8,18 +25,36 @@ export default function ContactForm (){
                 <fieldset>
                     <legend>Personal Information</legend>
                     <label htmlFor="fullName">Full Name
-                        <input type="text" name="fullName" id="fullName"/>
+                        <input  type="text" 
+                                name="fullName" 
+                                id="fullName" 
+                                onChange={handleChange} 
+                                value={fullname}/>
                     </label>
-
-                    <label>Postcode
-                        <input />
+<div>
+                    <label htmlFor="postcode">Postcode
+                        <input  type="text"
+                                name="postcode" 
+                                id="postcode" 
+                                onChange={handleChange} 
+                                value={postcode}/>
+                             
                     </label>
+                    </div>
                     <label>House/ Flat Number and Street Name
-                        <input />
+                        <input  type="text"
+                                name="fullName" 
+                                id="fullName" 
+                                onChange={handleChange} 
+                                value={fullname}/>
                     </label>
 
                     <label>
-                        <input />
+                        <input  type="text"
+                                name="fullName" 
+                                id="fullName" 
+                                onChange={handleChange} 
+                                value={fullname}/>
                     </label>
                 </fieldset>
 
