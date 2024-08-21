@@ -1,3 +1,0 @@
-> get css for menu page done
-> make the menu overlay
-> make the menu a component
