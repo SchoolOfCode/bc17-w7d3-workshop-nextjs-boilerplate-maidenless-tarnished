@@ -14,7 +14,11 @@ function reducer(state, action) {
     case "FIELD_CHANGED":
       console.log("action recieved");
       return {
-        ...state
+        ...state,
+        data: {
+            ...state.data,
+        [action.payload.fieldName]: action.payload.fieldValue,
+        },
       };
     default:
       return state;
