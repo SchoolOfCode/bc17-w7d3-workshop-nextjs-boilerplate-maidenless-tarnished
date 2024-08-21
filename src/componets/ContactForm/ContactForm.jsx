@@ -1,31 +1,35 @@
 "use client"
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import styles from "./ContactForm.module.css"
+
+const initialState = {
+    data: {
+        fullName: '',
+    },
+    error: false
+};
+
+function reducer(state, action) {
+    switch(action.type) {
+        default:
+            return state;
+    }
+};
 
 export default function ContactForm (){
 
-    const [fullName, setFullName] = useState("");
-    const [postcode, setPostcode] = useState("");
-    const [houseName, setHouseName] = useState("");
-    const [cityName, setCityName] = useState("");
+    const [ state, dispatch ] = useReducer(reducer, initialState);
+
+    console.log(state)
+
+
 
     function handleChange(event) {
 
         if (event.target.name === "fullName") {
-            setFullName(event.target.value)
-        };
-        if (event.target.name === "postcode") {
-            setPostcode(event.target.value)
-        };
-        if (event.target.name === "houseName") {
-            setHouseName(event.target.value)
-        };
-        if (event.target.name === "cityName") {
-            setCityName(event.target.value)
+            // setFullName(event.target.value)
         };
     }
-
-    console.log(fullName, postcode, houseName, cityName)
 
     function handleSubmit(event) { // add this to prevent the form from submitting by default as it usually would.
         event.preventDefault();
@@ -33,17 +37,13 @@ export default function ContactForm (){
         console.log(event)
         
         const fullName = event.target.fullName.value;
-        const postcode = event.target.postcode.value;
-        const houseName = event.target.houseName.value;
-        const cityName = event.target.cityName.value;
-    
-        if (!fullName || !postcode || !cityName || !houseName) {
-            setError("Error - some fields are missing");
+      
+        if (!fullName) {
+            // setError("Error - some fields are missing");
             return;
         }
-        console.log(fullName, postcode, houseName, cityName)
     }
-        const [error, setError] = useState(false);
+        
         
 // added onsubmit handler to the form - allows us to control what happens when the form is submitted
     return (
@@ -57,31 +57,9 @@ export default function ContactForm (){
                                 name="fullName" 
                                 id="fullName" 
                                 onChange={handleChange} 
-                                value={fullName}/>
+                                value={state.data.fullName}/>
                     </label>
-                    <label htmlFor="postcode">Postcode
-                        <input  type="text"
-                                name="postcode" 
-                                id="postcode" 
-                                onChange={handleChange} 
-                                value={postcode}/>
-                             
-                    </label>
-                    <label htmlFor="houseName">House/ Flat Number and Street Name
-                        <input  type="text"
-                                name="houseName" 
-                                id="houseName" 
-                                onChange={handleChange} 
-                                value={houseName}/>
-                    </label>
-
-                    <label htmlFor="cityName">City
-                        <input  type="text"
-                                name="cityName" 
-                                id="cityName" 
-                                onChange={handleChange} 
-                                value={cityName}/>
-                    </label>
+                   
                 </fieldset>
 
                 <fieldset>
@@ -89,7 +67,7 @@ export default function ContactForm (){
                     <label><input /></label>
                     <label><input /></label>
                 </fieldset>
-                {error && <p>You Shall Not Pass!!</p>}
+                {state.error && <p>You Shall Not Pass!!</p>}
                 <button type="submit">Submit Form</button>
             </form>
         </main>
