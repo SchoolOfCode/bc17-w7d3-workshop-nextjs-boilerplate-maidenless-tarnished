@@ -13,4 +13,39 @@
 .description {
     font-size: 1.2rem;
     text-align: center;
+    border-top: 1px solid grey;
+    padding-top: 20px;
+}
+
+.buttonSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.button {
+    height: 50px;
+    width: 100px;
+    border: none;
+    font-size: 1.05rem;
+}
+
+.button:hover {
+    background-color: orange;
+}
+
+.reviewText {
+    background-color: lightgray;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.reviewAuthor {
+    text-align: right;
+    text-decoration: underline;
 }
