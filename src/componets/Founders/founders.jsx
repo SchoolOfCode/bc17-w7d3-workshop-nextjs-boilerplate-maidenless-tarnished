@@ -1,6 +1,6 @@
 import HeroSection from "./Hero/HeroSection/HeroSection"
 import Separator from "../Separator/Separator";
-import HowItWorksSection from "../HowItWorks/HowItWorksSection/HowItWorksSection";
+import HowItWorksSection from "./How it Works/HowItWorksSection/HowitWorks";
 
 const Founders = () => {
     return (

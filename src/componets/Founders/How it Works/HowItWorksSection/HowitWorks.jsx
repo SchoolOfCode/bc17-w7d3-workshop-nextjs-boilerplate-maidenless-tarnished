@@ -1,23 +1,23 @@
 import styles from './styles.module.css';
-import Article from "../Article/FoundersArticle";
+import Article from "../Article/Article";
 
 const HowItWorksSection = () => {
 
   const articlesData = [
     {
-      imageSrc: '/founders-1.png',
+      imageSrc: "/founders-1.png",
       altText: 'Phone call illustration',
       title: 'Give us a call...',
       description: 'Call us and book in a "Design Consultation" on a date and time that suits you.',
     },
     {
-      imageSrc: '/how-it-works-2.png',
+      imageSrc: '/founders-2.png',
       altText: 'Home visit illustration',
       title: 'We come to you...',
       description: 'We come to your home to do an assessment of the space and to your style preference.',
     },
     {
-      imageSrc: '/how-it-works-3.png',
+      imageSrc: '/founders-3.png',
       altText: 'Fireplace recommendation illustration',
       title: 'We recommend...',
       description: 'We send you a bespoke set of fireplace recommendations.',
