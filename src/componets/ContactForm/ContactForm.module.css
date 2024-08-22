@@ -5,7 +5,60 @@
 
 .header {
     background-color: #f1911b;
-    height: 75px;
-    text-align: center;
-    ;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    padding-left: 15px;
 }
+
+.inputGroup {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    margin-top: 10px;
+}
+
+.field {
+    border: none;
+    background-color: #e5e5e5;
+    padding: 20px;
+    position: relative;
+    margin: 70px 0;
+}
+
+.legend {
+    position: absolute;
+    top: -45px;
+    left: 0px;
+    font-size: 1.3rem;
+}
+
+.button {
+    background-color: #f1911b;
+    border: none;
+    width: 100%;
+    height: 4.2rem;
+    font-size: 1.2rem;
+}
+
+.buttonReplacement {
+    background-color: #f1911b;
+    width: 100%;
+    height: 4.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.error {
+    color: red;
+}
+
+

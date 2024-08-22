@@ -92,11 +92,11 @@ export default function ContactForm() {
     <main className={styles.wrapper}>
       <h1 className={styles.header}>Design Booking</h1>
       <form className={styles.formBox} onSubmit={handleSubmit}>
-        <fieldset className={styles.personalField}>
-          <legend>Personal Information</legend>
+        <fieldset className={styles.field}>
+          <legend className={styles.legend}>Personal Information:</legend>
           
           {/* Full name field */}
-          <label htmlFor="fullName">
+          <label className={styles.inputGroup} htmlFor="fullName">
             Full Name
             <input
               type="text"
@@ -104,11 +104,12 @@ export default function ContactForm() {
               id="fullName"
               onChange={handleChange}
               value={state.data.fullName}
+              className={styles.input}
             />
           </label>
           
           {/* Postcode field */}
-          <label htmlFor="postcode">
+          <label className={styles.inputGroup} htmlFor="postcode">
             Postcode
             <input
               type="text"
@@ -116,11 +117,12 @@ export default function ContactForm() {
               id="postcode"
               onChange={handleChange}
               value={state.data.postcode}
+              className={styles.input}
             />
           </label>
           
           {/* House details field */}
-          <label htmlFor="houseDetails">
+          <label className={styles.inputGroup} htmlFor="houseDetails">
           House/ Flat Number and Street Name
             <input
               type="text"
@@ -128,11 +130,12 @@ export default function ContactForm() {
               id="houseDetails"
               onChange={handleChange}
               value={state.data.houseDetails}
+              className={styles.input}
             />
           </label>
           
           {/* City field */}
-          <label htmlFor="city">
+          <label className={styles.inputGroup} htmlFor="city">
           City
             <input
               type="text"
@@ -140,15 +143,16 @@ export default function ContactForm() {
               id="city"
               onChange={handleChange}
               value={state.data.city}
+              className={styles.input}
             />
           </label>
         </fieldset>
 
-        <fieldset>
-          <legend>Contact Information</legend>
+        <fieldset className={styles.field}>
+          <legend className={styles.legend}>Contact Information:</legend>
           
           {/*Phone number */}
-          <label htmlFor="phoneNumber">
+          <label className={styles.inputGroup} htmlFor="phoneNumber">
           Phone Number
             <input
               type="text"
@@ -156,11 +160,12 @@ export default function ContactForm() {
               id="phoneNumber"
               onChange={handleChange}
               value={state.data.phoneNumber}
+              className={styles.input}
             />
             </label>
             
              {/*Email */}
-          <label htmlFor="email">
+          <label className={styles.inputGroup} htmlFor="email">
           Email
             <input
               type="text"
@@ -168,18 +173,18 @@ export default function ContactForm() {
               id="email"
               onChange={handleChange}
               value={state.data.email}
+              className={styles.input}
             />
             </label>
         </fieldset>
-        {state.status === "error" && <p>You Shall Not Pass!!</p>}
-        {state.status === "success" ? (
-    <p>Form Submitted</p>
-) : state.status === "submitting" ? (
-    <button type="submit">Submitting...</button>
-) : (
-    <button type="submit">Submit Form</button>
-)}
-        {/* <button type="submit">Submit Form</button> */}
+        {state.status === "error" && <p className={styles.error}>Please fill in all fields to Submit Form</p>}
+        {state.status === "success" ? ( <p className={styles.buttonReplacement}>Form Submitted</p> )
+        
+        : state.status === "submitting" ? ( <p className={styles.buttonReplacement}>Submitting...</p> )
+        
+        : ( <button className={styles.button} type="submit">Request Design Consultation</button> )
+
+      }
       </form>
     </main>
   );
