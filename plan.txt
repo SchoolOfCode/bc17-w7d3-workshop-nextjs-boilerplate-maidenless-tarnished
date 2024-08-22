@@ -1,0 +1,8 @@
+// make a plan, stan
+// finish the form 
+// work on the errors on the form
+// finish up the css
+
+// use comments
+// make notes for presentation
+// screen shot examples

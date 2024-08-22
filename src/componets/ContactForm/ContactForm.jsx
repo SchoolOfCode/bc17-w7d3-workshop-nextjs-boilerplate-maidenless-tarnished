@@ -5,8 +5,11 @@ import styles from "./ContactForm.module.css";
 const initialState = {
   data: {
     fullName: "",
+    postcode: "",
+    houseDetails: "",
+    city: "",
   },
-  error: false,
+  status: "editing",
 };
 
 function reducer(state, action) {
@@ -33,8 +36,6 @@ export default function ContactForm() {
   console.log(state);
 
   function handleChange(event) {
-    if (event.target.name === "fullName") {
-      // setFullName(event.target.value)
       dispatch({
         type: "FIELD_CHANGED",
         payload: {
@@ -43,7 +44,6 @@ export default function ContactForm() {
         },
       });
     }
-  }
 
   function handleSubmit(event) {
     // add this to prevent the form from submitting by default as it usually would.
@@ -76,6 +76,26 @@ export default function ContactForm() {
               value={state.data.fullName}
             />
           </label>
+          <label htmlFor="postcode">
+            Postcode
+            <input
+              type="text"
+              name="postcode"
+              id="postcode"
+              onChange={handleChange}
+              value={state.data.postcode}
+            />
+          </label>
+          <label htmlFor="houseDetails">
+          House/ Flat Number and Street Name
+            <input
+              type="text"
+              name="houseDetails"
+              id="houseDetails"
+              onChange={handleChange}
+              value={state.data.houseDetails}
+            />
+          </label>
         </fieldset>
 
         <fieldset>
@@ -93,3 +113,9 @@ export default function ContactForm() {
     </main>
   );
 }
+
+// finish the input fields 
+// update the handleChange dispatches
+// update initial state
+// get one error working
+// test each step as we go along
