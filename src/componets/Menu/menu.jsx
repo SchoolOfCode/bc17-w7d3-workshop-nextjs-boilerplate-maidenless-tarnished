@@ -14,6 +14,7 @@ export default function Menu({ isOpen, onClose }) {
                 <div className={styles.links}>
                     <Link onClick={() => handleClick()} href="/" >Home</Link>
                     <Link onClick={() => handleClick()} href="/founders">Meet the Founders</Link>
+                    <Link onClick={() => handleClick()} href="/bookings">Book Consultation</Link>
                 </div>
             </div>
         </>
