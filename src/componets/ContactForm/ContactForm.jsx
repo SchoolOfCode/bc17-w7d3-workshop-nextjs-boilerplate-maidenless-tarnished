@@ -23,6 +23,21 @@ function reducer(state, action) {
         [action.payload.fieldName]: action.payload.fieldValue,
         },
       };
+      case 'ERROR':
+        return {
+            ...state,
+            status: "error"
+        };
+    case "FORM_SUBMITTING":
+        return {
+            ...state,
+            status: "submitting"
+        };
+    case "FORM_SUCCESS":
+        return {
+            ...state,
+            status: "success"
+        };
     default:
       return state;
   }
@@ -48,15 +63,28 @@ export default function ContactForm() {
   function handleSubmit(event) {
     // add this to prevent the form from submitting by default as it usually would.
     event.preventDefault();
-    // Now we can do whatever we want with the form data!
-    console.log(event);
+    dispatch({
+      type: "FORM_SUBMITTING"
+      
+    })
+    setTimeout(() => {
 
-    const fullName = event.target.fullName.value;
+      if (!state.data.fullName || !state.data.postcode || !state.data.houseDetails || !state.data.city || !state.data.phoneNumber || !state.data.email)  {
+          dispatch({
+              type: "ERROR",
+          });
+          return;
+      }
+  
+      dispatch({
+          type: "FORM_SUCCESS"
+      });
+  
+      console.log("Data!!!!!!");
+  
+  }, 3000);
+    
 
-    if (!fullName) {
-      // setError("Error - some fields are missing");
-      return;
-    }
   }
 
   // added onsubmit handler to the form - allows us to control what happens when the form is submitted
@@ -66,6 +94,8 @@ export default function ContactForm() {
       <form className={styles.formBox} onSubmit={handleSubmit}>
         <fieldset className={styles.personalField}>
           <legend>Personal Information</legend>
+          
+          {/* Full name field */}
           <label htmlFor="fullName">
             Full Name
             <input
@@ -76,6 +106,8 @@ export default function ContactForm() {
               value={state.data.fullName}
             />
           </label>
+          
+          {/* Postcode field */}
           <label htmlFor="postcode">
             Postcode
             <input
@@ -86,6 +118,8 @@ export default function ContactForm() {
               value={state.data.postcode}
             />
           </label>
+          
+          {/* House details field */}
           <label htmlFor="houseDetails">
           House/ Flat Number and Street Name
             <input
@@ -96,26 +130,50 @@ export default function ContactForm() {
               value={state.data.houseDetails}
             />
           </label>
+          
+          {/* City field */}
+          <label htmlFor="city">
+          City
+            <input
+              type="text"
+              name="city"
+              id="city"
+              onChange={handleChange}
+              value={state.data.city}
+            />
+          </label>
         </fieldset>
 
         <fieldset>
           <legend>Contact Information</legend>
-          <label>
-            <input />
-          </label>
-          <label>
-            <input />
-          </label>
+          
+          {/*Phone number */}
+          <label htmlFor="phoneNumber">
+          Phone Number
+            <input
+              type="text"
+              name="phoneNumber"
+              id="phoneNumber"
+              onChange={handleChange}
+              value={state.data.phoneNumber}
+            />
+            </label>
+            
+             {/*Email */}
+          <label htmlFor="email">
+          Email
+            <input
+              type="text"
+              name="email"
+              id="email"
+              onChange={handleChange}
+              value={state.data.email}
+            />
+            </label>
         </fieldset>
-        {state.error && <p>You Shall Not Pass!!</p>}
+        {state.status === "error" && <p>You Shall Not Pass!!</p>}
         <button type="submit">Submit Form</button>
       </form>
     </main>
   );
 }
-
-// finish the input fields 
-// update the handleChange dispatches
-// update initial state
-// get one error working
-// test each step as we go along

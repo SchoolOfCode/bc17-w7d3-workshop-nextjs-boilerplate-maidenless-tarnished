@@ -6,3 +6,9 @@
 // use comments
 // make notes for presentation
 // screen shot examples
+
+// finish the input fields ✅
+// update the handleChange dispatches
+// update initial state
+// get one error working
+// test each step as we go along
