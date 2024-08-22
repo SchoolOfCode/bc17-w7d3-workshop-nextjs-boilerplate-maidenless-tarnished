@@ -1,11 +1,11 @@
 import styles from './styles.module.css';
-import Article from '../Article/Article';
+import Article from "../Article/FoundersArticle";
 
 const HowItWorksSection = () => {
 
   const articlesData = [
     {
-      imageSrc: '/how-it-works-1.png',
+      imageSrc: '/founders-1.png',
       altText: 'Phone call illustration',
       title: 'Give us a call...',
       description: 'Call us and book in a "Design Consultation" on a date and time that suits you.',

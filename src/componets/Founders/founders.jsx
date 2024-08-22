@@ -1,11 +1,11 @@
-import FoundersHeroSection from "./Founders Hero/HeroSection/FoundersHeroSection"
+import HeroSection from "./Hero/HeroSection/HeroSection"
 import Separator from "../Separator/Separator";
 import HowItWorksSection from "../HowItWorks/HowItWorksSection/HowItWorksSection";
 
 const Founders = () => {
     return (
         <main>
-            <FoundersHeroSection />
+            <HeroSection />
             <Separator />
             <HowItWorksSection  />
         </main>
