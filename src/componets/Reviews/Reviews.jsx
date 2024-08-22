@@ -25,12 +25,17 @@ export default function Reviews () {
                 <p className={styles.description}>We've got thousands of happy customers all over the UK. Choose your country to see the latest review:</p>
 
                 <div className={styles.buttonSection}>
-                    <button className={styles.button} onClick={() => setCountry('england')}>England</button>
-                    <button className={styles.button} onClick={() => setCountry('wales')}>Wales</button>
-                    <button className={styles.button} onClick={() => setCountry('scotland')}>Scotland</button>
+                    <button className={styles.button} 
+                            onClick={() => setCountry('england')}>England</button>
+                    
+                    <button className={styles.button} 
+                            onClick={() => setCountry('wales')}>Wales</button>
+                    
+                    <button className={styles.button} 
+                            onClick={() => setCountry('scotland')}>Scotland</button>
                 </div>
                 <div className={styles.reviewData}>
-                    <p className={styles.reviewText}>{reviews.text}</p>
+                    <p className={selectedCountry ? styles.reviewText : ""}>{reviews.text}</p>
                     <p className={styles.reviewAuthor}>{reviews.author}</p>
                 </div>
             </div>

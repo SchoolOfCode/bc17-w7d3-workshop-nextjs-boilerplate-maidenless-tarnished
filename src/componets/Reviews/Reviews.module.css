@@ -31,13 +31,12 @@
     font-size: 1.05rem;
 }
 
-.button:hover {
+.button:focus {
     background-color: orange;
 }
 
 .reviewText {
     background-color: lightgray;
-    height: 125px;
     display: flex;
     justify-content: center;
     align-items: center;
