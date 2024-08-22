@@ -5,7 +5,7 @@ const HeroDescription = () => {
   return (
         <div className={styles.heroDescription}>
         <p className={styles.heroHeadline}>Discover the Perfect Fireplace...</p>
-          <Link href="/bookings">Book Consultation</Link>
+        <Link className={styles.link} href="/bookings">Book Consultation</Link>
       </div>
     )
 }

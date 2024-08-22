@@ -5,9 +5,7 @@ import Reviews from "../Reviews/Reviews.jsx";
 const Main = () => {
   return (
     <main>
-      <HeroSection
-        description="Discover the Perfect Fireplace..." 
-        heroImagesrc="/hero-desktop.png" />
+      <HeroSection />
       <Reviews />
       <Separator />
       <HowItWorksSection />

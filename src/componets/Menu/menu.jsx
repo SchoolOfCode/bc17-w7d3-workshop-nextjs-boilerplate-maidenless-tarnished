@@ -5,7 +5,6 @@ export default function Menu({ isOpen, onClose }) {
 
     function handleClick() {
         onClose();
-        console.log("Menu closed");
     }
     return (
         <>

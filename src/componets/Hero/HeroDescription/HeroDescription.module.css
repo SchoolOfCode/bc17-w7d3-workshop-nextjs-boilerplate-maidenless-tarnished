@@ -1,6 +1,7 @@
 .heroHeadline {
   margin: 0;
   padding: 0;
+  color: #2f2f2f;
 }
 .heroDescription {
   background-color: #f1911b;
@@ -15,6 +16,11 @@
 }
 .numberSpan {
   color: #fff2e4;
+}
+
+.link {
+  color: black;
+  margin-top: 10px;
 }
 
 @media (min-width: 1024px) {

@@ -10,7 +10,6 @@ const[isMenuOpen, setIsMenuOpen] = useState(false);
 
 function handleClick() {
   setIsMenuOpen(!isMenuOpen)
-  console.log(isMenuOpen)
 }
   return (
     <header className={styles.headerContainer}>
