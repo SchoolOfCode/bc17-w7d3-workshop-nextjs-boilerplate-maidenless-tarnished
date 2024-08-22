@@ -6,7 +6,6 @@ const Founders = () => {
     return (
         <main>
             <HeroSection />
-            <Separator />
             <HowItWorksSection  />
         </main>
     )

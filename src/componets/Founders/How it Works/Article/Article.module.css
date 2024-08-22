@@ -2,12 +2,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     padding: 10px;
   }
-  .tileImage {
-    height: 200px;
-    width: 250px;
+
+.title {
+  align-self: flex-start;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.description {
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.tileImage {
+    height: auto;
+    width: 100%;
   }
   @media (min-width: 1024px){
     .tile {
