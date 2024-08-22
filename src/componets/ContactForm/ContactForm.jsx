@@ -172,7 +172,14 @@ export default function ContactForm() {
             </label>
         </fieldset>
         {state.status === "error" && <p>You Shall Not Pass!!</p>}
-        <button type="submit">Submit Form</button>
+        {state.status === "success" ? (
+    <p>Form Submitted</p>
+) : state.status === "submitting" ? (
+    <button type="submit">Submitting...</button>
+) : (
+    <button type="submit">Submit Form</button>
+)}
+        {/* <button type="submit">Submit Form</button> */}
       </form>
     </main>
   );
