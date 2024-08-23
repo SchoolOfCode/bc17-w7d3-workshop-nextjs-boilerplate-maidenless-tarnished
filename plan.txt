@@ -8,7 +8,13 @@
 // screen shot examples
 
 // finish the input fields ✅
-// update the handleChange dispatches
-// update initial state
-// get one error working
-// test each step as we go along
+// update the handleChange dispatches ✅
+// update initial state ✅
+// get one error working ✅
+// test each step as we go along ✅
+
+
+
+// Create two User Journeys for the site using Figjam
+// Create a playwright test to test user journey
+//
