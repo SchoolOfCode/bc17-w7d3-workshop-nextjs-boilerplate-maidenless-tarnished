@@ -6,6 +6,8 @@ const initialState = {
   data: {
     fullName: "",
     postcode: "",
+    email:"",
+    phoneNumber: "",
     houseDetails: "",
     city: "",
   },
@@ -82,7 +84,7 @@ export default function ContactForm() {
   
       console.log("Data!!!!!!");
   
-  }, 3000);
+  }, 2000);
     
 
   }
